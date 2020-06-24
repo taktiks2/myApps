@@ -2,9 +2,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofSetWindowShape(600, 400);
+	ofSetWindowShape(1000, 1000);
 	ofSetFrameRate(30);
-	ofSetBackgroundColor(255, 0, 255);
+	ofSetBackgroundColor(255, 255, 255);
 }
 
 //--------------------------------------------------------------
@@ -14,13 +14,15 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	ofSetColor(100, 200, 200);
+	ofSetColor(0);
 
 	for (int i = 0; i < 10; i++) {
 		int X = 100 * i;
-		ofDrawCircle(X, 200, 120);
+		for (int j = 0; j < 10; j++) {
+			int Y = 100 * j;
+			ofDrawRectangle(X, Y, 90, 90);
+		}
 	}
-
 }
 
 //--------------------------------------------------------------
