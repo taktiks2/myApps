@@ -3,19 +3,30 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofSetWindowShape(1000, 1000);
-	ofSetFrameRate(30);
+	ofSetFrameRate(60);
 	ofSetBackgroundColor(255, 255, 255);
+	ofSetCircleResolution(64);
+	
+	rad = 0.0;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	if (posX <= 1000) {
+		posX += 100;
+	}
+	else {
+		if (posY > 1000) {
+			posY = 0;
+		}
+		posX = 0;
+		posY += 100;
+	}
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
 	ofSetColor(0);
-
 	for (int i = 0; i < 10; i++) {
 		int X = 100 * i;
 		for (int j = 0; j < 10; j++) {
@@ -23,6 +34,9 @@ void ofApp::draw(){
 			ofDrawRectangle(X, Y, 90, 90);
 		}
 	}
+
+	ofSetColor(100, 0, 0);
+	ofDrawCircle(posX, posY, 40);
 }
 
 //--------------------------------------------------------------

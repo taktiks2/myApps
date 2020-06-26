@@ -3,6 +3,10 @@
 #include "ofMain.h"
 
 class ofApp : public ofBaseApp{
+	private:
+		float rad;
+		float posX, posY;
+
 	public:
 		void setup();
 		void update();
